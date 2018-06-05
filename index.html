@@ -16,7 +16,8 @@
         var to = "n1sLoq7XBDJw9Nvgvw8eAeeRmknQfJcysj1";
         var value = "0";
         var callFunction = "save";
-        var callArgs = [game.score];
+        var callArgs = [];
+        callArgs.push(game.score)
         nebPay.call(to, value, callFunction, callArgs, {
             listener: Save
         });

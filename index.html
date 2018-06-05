@@ -10,15 +10,14 @@
   <script src='js/TweenMax.min.js'></script>
   <script src="js/index.js"></script>
   <script>
-    function trans() {
+    function trans(game) {
         var NebPay = require("nebpay");
         var nebPay = new NebPay();
-        var to = "n1rMCmZimzsCft36dBDKcvHcqgcwAQiTWot";
+        var to = "n1sLoq7XBDJw9Nvgvw8eAeeRmknQfJcysj1";
         var value = "0";
         var callFunction = "save";
-        var callArgs = [];
-        callArgs.push(["user",game.score,"goodjob"]);
-        nebPay.call(to, value, callFunction, JSON.stringify(callArgs), {
+        var callArgs = game.score;
+        nebPay.call(to, value, callFunction, callArgs, {
             listener: Save
         });
         function Save(resp) {
